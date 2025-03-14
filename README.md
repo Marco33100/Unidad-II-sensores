@@ -1,6 +1,6 @@
 # IoT Unidad 2 - Grupo GDS0652
 
-## Autores
+## Autor
 |Alumno|Número de control|
 |--|--|
 |Marco Antonio Martínez Ramírez|1223100287|
