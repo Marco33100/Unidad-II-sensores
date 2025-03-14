@@ -2,7 +2,7 @@
 
 ## Autores
 |Alumno|Número de control|
-|--||--|
+|--|--|
 |Marco Antonio Martínez Ramírez|1223100287|
    
 ## Examenes de JavaScript Essentials 2
