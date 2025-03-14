@@ -1,0 +1,610 @@
+[
+    {
+        "id": "077078263a1289b5",
+        "type": "tab",
+        "label": "Flujo 6",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "75d5d6851065ac95",
+        "type": "mqtt in",
+        "z": "077078263a1289b5",
+        "name": "",
+        "topic": "utng/sensorBoton",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "f441e7ec14fa4a54",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 140,
+        "y": 140,
+        "wires": [
+            [
+                "49b67d6994f86285"
+            ]
+        ]
+    },
+    {
+        "id": "49b67d6994f86285",
+        "type": "postgresql",
+        "z": "077078263a1289b5",
+        "name": "",
+        "query": "INSERT INTO sensor_details(sensor_id, user_id, value) VALUES(8, 2, '{{{msg.payload}}}');",
+        "postgreSQLConfig": "5fd8c77f3215217d",
+        "split": false,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 370,
+        "y": 60,
+        "wires": [
+            [
+                "6cbdfb1c5e37f54d"
+            ]
+        ]
+    },
+    {
+        "id": "6cbdfb1c5e37f54d",
+        "type": "debug",
+        "z": "077078263a1289b5",
+        "name": "debug 11",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 600,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "768921c5e0dce9c6",
+        "type": "inject",
+        "z": "077078263a1289b5",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "20",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 160,
+        "y": 220,
+        "wires": [
+            [
+                "8e9d8b5e51803258"
+            ]
+        ]
+    },
+    {
+        "id": "8e9d8b5e51803258",
+        "type": "postgresql",
+        "z": "077078263a1289b5",
+        "name": "",
+        "query": "SELECT * FROM sensor_details;",
+        "postgreSQLConfig": "4b62d949b28d3b89",
+        "split": false,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 370,
+        "y": 200,
+        "wires": [
+            [
+                "3286e52d3684ea74"
+            ]
+        ]
+    },
+    {
+        "id": "3286e52d3684ea74",
+        "type": "ui_table",
+        "z": "077078263a1289b5",
+        "group": "548220893ca0899e",
+        "name": "",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "columns": [],
+        "outputs": 0,
+        "cts": false,
+        "x": 610,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "e2300536e3767587",
+        "type": "mqtt in",
+        "z": "077078263a1289b5",
+        "name": "",
+        "topic": "utng/sensorTemperatura",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "f441e7ec14fa4a54",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 170,
+        "y": 380,
+        "wires": [
+            [
+                "a135fc3595677963"
+            ]
+        ]
+    },
+    {
+        "id": "a135fc3595677963",
+        "type": "postgresql",
+        "z": "077078263a1289b5",
+        "name": "",
+        "query": "INSERT INTO sensor_details(sensor_id, user_id, value) VALUES(9, 2, '{{{msg.payload}}}');",
+        "postgreSQLConfig": "5fd8c77f3215217d",
+        "split": false,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 370,
+        "y": 300,
+        "wires": [
+            [
+                "d1c0f0173e332182"
+            ]
+        ]
+    },
+    {
+        "id": "d1c0f0173e332182",
+        "type": "debug",
+        "z": "077078263a1289b5",
+        "name": "debug 12",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 600,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "d37b0f6f0d4ae6b5",
+        "type": "inject",
+        "z": "077078263a1289b5",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "20",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 160,
+        "y": 460,
+        "wires": [
+            [
+                "821e82b8706cc437"
+            ]
+        ]
+    },
+    {
+        "id": "821e82b8706cc437",
+        "type": "postgresql",
+        "z": "077078263a1289b5",
+        "name": "",
+        "query": "SELECT * FROM sensor_details;",
+        "postgreSQLConfig": "4b62d949b28d3b89",
+        "split": false,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 370,
+        "y": 440,
+        "wires": [
+            [
+                "b7e925a5a169b783"
+            ]
+        ]
+    },
+    {
+        "id": "b7e925a5a169b783",
+        "type": "ui_table",
+        "z": "077078263a1289b5",
+        "group": "efb1492092f75595",
+        "name": "",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "columns": [],
+        "outputs": 0,
+        "cts": false,
+        "x": 610,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "23e96581eaa80244",
+        "type": "mqtt in",
+        "z": "077078263a1289b5",
+        "name": "",
+        "topic": "utng/actuadorLaser",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "f441e7ec14fa4a54",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 150,
+        "y": 660,
+        "wires": [
+            [
+                "2b3c3088a9a53956"
+            ]
+        ]
+    },
+    {
+        "id": "2b3c3088a9a53956",
+        "type": "postgresql",
+        "z": "077078263a1289b5",
+        "name": "",
+        "query": "INSERT INTO actuator_details(actuator_id, user_id, state) VALUES(4, 2, '{{{msg.payload}}}');",
+        "postgreSQLConfig": "5fd8c77f3215217d",
+        "split": false,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 370,
+        "y": 580,
+        "wires": [
+            [
+                "8af5fbc25cf2fce6"
+            ]
+        ]
+    },
+    {
+        "id": "8af5fbc25cf2fce6",
+        "type": "debug",
+        "z": "077078263a1289b5",
+        "name": "debug 13",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 600,
+        "y": 640,
+        "wires": []
+    },
+    {
+        "id": "f088a3af3c2b2d87",
+        "type": "inject",
+        "z": "077078263a1289b5",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "20",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 160,
+        "y": 740,
+        "wires": [
+            [
+                "bd6d3421153f8457"
+            ]
+        ]
+    },
+    {
+        "id": "bd6d3421153f8457",
+        "type": "postgresql",
+        "z": "077078263a1289b5",
+        "name": "",
+        "query": "SELECT * FROM actuator_details;",
+        "postgreSQLConfig": "4b62d949b28d3b89",
+        "split": false,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 370,
+        "y": 720,
+        "wires": [
+            [
+                "6f4cc76fe30ebc6e"
+            ]
+        ]
+    },
+    {
+        "id": "6f4cc76fe30ebc6e",
+        "type": "ui_table",
+        "z": "077078263a1289b5",
+        "group": "3b66f3bdeb68543c",
+        "name": "",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "columns": [],
+        "outputs": 0,
+        "cts": false,
+        "x": 610,
+        "y": 740,
+        "wires": []
+    },
+    {
+        "id": "44554db839b4b536",
+        "type": "mqtt in",
+        "z": "077078263a1289b5",
+        "name": "",
+        "topic": "utng/actuadorLedColores",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "f441e7ec14fa4a54",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 130,
+        "y": 920,
+        "wires": [
+            [
+                "0bd4b35d165aafcc"
+            ]
+        ]
+    },
+    {
+        "id": "904b616aeb47883b",
+        "type": "debug",
+        "z": "077078263a1289b5",
+        "name": "debug 14",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 620,
+        "y": 920,
+        "wires": []
+    },
+    {
+        "id": "ff05c8f3a7967d0b",
+        "type": "inject",
+        "z": "077078263a1289b5",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "20",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 120,
+        "y": 1020,
+        "wires": [
+            [
+                "b44da6f5ab52f8bc"
+            ]
+        ]
+    },
+    {
+        "id": "b44da6f5ab52f8bc",
+        "type": "postgresql",
+        "z": "077078263a1289b5",
+        "name": "",
+        "query": "SELECT * FROM actuator_details;",
+        "postgreSQLConfig": "4b62d949b28d3b89",
+        "split": false,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 390,
+        "y": 1000,
+        "wires": [
+            [
+                "84cd38f54ae8125a"
+            ]
+        ]
+    },
+    {
+        "id": "84cd38f54ae8125a",
+        "type": "ui_table",
+        "z": "077078263a1289b5",
+        "group": "f98fc51fba7f41f6",
+        "name": "",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "columns": [],
+        "outputs": 0,
+        "cts": false,
+        "x": 630,
+        "y": 1020,
+        "wires": []
+    },
+    {
+        "id": "0bd4b35d165aafcc",
+        "type": "postgresql",
+        "z": "077078263a1289b5",
+        "name": "",
+        "query": "INSERT INTO actuator_details(actuator_id, user_id, state) VALUES(5, 2, '{{{msg.payload}}}');",
+        "postgreSQLConfig": "5fd8c77f3215217d",
+        "split": false,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 390,
+        "y": 880,
+        "wires": [
+            [
+                "904b616aeb47883b"
+            ]
+        ]
+    },
+    {
+        "id": "f441e7ec14fa4a54",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "192.168.137.167",
+        "port": 1883,
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": 4,
+        "keepalive": 60,
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "5fd8c77f3215217d",
+        "type": "postgreSQLConfig",
+        "name": "",
+        "host": "127.0.0.1",
+        "hostFieldType": "str",
+        "port": 5432,
+        "portFieldType": "num",
+        "database": "postgres",
+        "databaseFieldType": "str",
+        "ssl": "false",
+        "sslFieldType": "bool",
+        "applicationName": "",
+        "applicationNameType": "str",
+        "max": 10,
+        "maxFieldType": "num",
+        "idle": 1000,
+        "idleFieldType": "num",
+        "connectionTimeout": 10000,
+        "connectionTimeoutFieldType": "num",
+        "user": "utng",
+        "userFieldType": "str",
+        "password": "1234",
+        "passwordFieldType": "str"
+    },
+    {
+        "id": "4b62d949b28d3b89",
+        "type": "postgreSQLConfig",
+        "name": "",
+        "host": "127.0.0.1",
+        "hostFieldType": "str",
+        "port": 5432,
+        "portFieldType": "num",
+        "database": "postgres",
+        "databaseFieldType": "str",
+        "ssl": "false",
+        "sslFieldType": "bool",
+        "applicationName": "",
+        "applicationNameType": "str",
+        "max": 10,
+        "maxFieldType": "num",
+        "idle": 1000,
+        "idleFieldType": "num",
+        "connectionTimeout": 10000,
+        "connectionTimeoutFieldType": "num",
+        "user": "utng",
+        "userFieldType": "str",
+        "password": "1234",
+        "passwordFieldType": "str"
+    },
+    {
+        "id": "548220893ca0899e",
+        "type": "ui_group",
+        "name": "Group 1",
+        "tab": "e1f2d175fa78a47f",
+        "order": 1,
+        "disp": true,
+        "width": 6
+    },
+    {
+        "id": "efb1492092f75595",
+        "type": "ui_group",
+        "name": "Group 2",
+        "tab": "e1f2d175fa78a47f",
+        "order": 2,
+        "disp": true,
+        "width": 6
+    },
+    {
+        "id": "3b66f3bdeb68543c",
+        "type": "ui_group",
+        "name": "Group 3",
+        "tab": "e1f2d175fa78a47f",
+        "order": 3,
+        "disp": true,
+        "width": 6
+    },
+    {
+        "id": "f98fc51fba7f41f6",
+        "type": "ui_group",
+        "name": "Group 4",
+        "tab": "e1f2d175fa78a47f",
+        "order": 4,
+        "disp": true,
+        "width": 6
+    },
+    {
+        "id": "e1f2d175fa78a47f",
+        "type": "ui_tab",
+        "name": "Tab 4",
+        "icon": "dashboard",
+        "order": 4
+    }
+]
