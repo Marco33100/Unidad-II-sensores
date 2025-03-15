@@ -17,6 +17,12 @@
 ## Videos de los sensores y actuadores
 https://drive.google.com/drive/folders/1v2uEx1rA5IbFMZkqQQ22pUVewfwqqEr2?usp=sharing
 
+## Diagrama de conexiones
+|imagen|Nombre|
+|--|--|
+|![image](https://github.com/user-attachments/assets/04d13530-a667-4c2a-9b5b-601a8e285bf3)|MQ-7|
+
+
 ## Examenes de JavaScript Essentials 2
 ![image](https://github.com/user-attachments/assets/219da018-6da7-4c27-93a4-f81abaafcd5d)
 
