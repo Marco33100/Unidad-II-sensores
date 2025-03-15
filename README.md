@@ -13,6 +13,7 @@
 
 ## Placa de LEDs
 ![image](https://github.com/user-attachments/assets/8e3b76ef-c4a3-4302-8bd7-7a7b80b59e0a)
+![image](https://github.com/user-attachments/assets/6da1db43-4f3a-44ef-9135-9751a01d8a34)
 
 ## Videos de los sensores y actuadores
 https://drive.google.com/drive/folders/1v2uEx1rA5IbFMZkqQQ22pUVewfwqqEr2?usp=sharing
